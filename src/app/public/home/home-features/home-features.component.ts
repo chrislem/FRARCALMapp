@@ -9,24 +9,24 @@ import { Component, OnInit } from '@angular/core';
 export class HomeFeaturesComponent implements OnInit {
 
   features;
-  
+
   constructor() { }
 
   ngOnInit(): void {
     this.features = [
          {
-          title: 'Plannifier sa semaine',
-         description: 'Visibilité sur les 7 prochains jours',
+          title: 'Import your data',
+         description: '',
          icon: 'assets/img/calendar.png'
         },
         {
-         title: 'Atteindre ses objectifs',
-         description: 'Priorisation des tâches',
+         title: 'Compute your indicators',
+         description: '',
          icon: 'assets/img/award.png'
         },
         {
-         title: 'Analyser sa productivité',
-         description: 'Visualiser le travail accompli',
+         title: 'View your reports',
+         description: '',
          icon: 'assets/img/diagram.png'
         }
        ];
