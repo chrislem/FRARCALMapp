@@ -20,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { CoreModule } from './core/core.module';
 
 
 const materialModules = [
@@ -47,7 +48,8 @@ const materialModules = [
     LayoutModule,
     FormsModule,
     HttpClientModule,
-    ...materialModules
+    ...materialModules,
+    CoreModule
   ],
   exports: [
     ...materialModules
