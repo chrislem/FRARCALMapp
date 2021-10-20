@@ -4,23 +4,30 @@ import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { FileUploadService } from 'src/app/services/file-upload.service';
 
 @Component({
-  selector: 'app-file-upload',
-  templateUrl: './file-upload.component.html',
-  styleUrls: ['./file-upload.component.scss']
+  selector: 'app-import-upload',
+  templateUrl: './import-upload.component.html',
+  styles: ['.file-input {    display: none;}'
+  ]
 })
-export class FileUploadComponent implements OnInit {
+export class ImportUploadComponent implements OnInit {
 
   selectedFiles?: FileList;
   currentFile?: File;
   progress = 0;
   message = '';
 
+  @Input() title : string;
+  @Input() apiUpload : string;
+  @Input() apiList : string;
+  @Input() pattern: string;
+ 
+
   fileInfos?: Observable<any>;
 
   constructor(private uploadService: FileUploadService) { }
   
   ngOnInit(): void {
-    this.fileInfos = this.uploadService.getFiles();
+    this.fileInfos = this.uploadService.getFiles(this.apiList);
   }
 
   selectFile(event: any): void {
@@ -36,13 +43,13 @@ export class FileUploadComponent implements OnInit {
       if (file) {
         this.currentFile = file;
   
-        this.uploadService.upload(this.currentFile).subscribe(
+        this.uploadService.upload(this.apiUpload, this.currentFile).subscribe(
           (event: any) => {
             if (event.type === HttpEventType.UploadProgress) {
               this.progress = Math.round(100 * event.loaded / event.total);
             } else if (event instanceof HttpResponse) {
               this.message = event.body.message;
-              this.fileInfos = this.uploadService.getFiles();
+              this.fileInfos = this.uploadService.getFiles(this.apiList);
             }
           },
           (err: any) => {

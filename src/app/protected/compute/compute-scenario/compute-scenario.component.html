@@ -1,0 +1,11 @@
+<p>List of Contracts</p>
+
+<mat-radio-group
+  class="contract-radio-group"
+  [(ngModel)]="selectedScenario"
+  (change)="radioChange($event)">
+  <mat-radio-button class="contract-radio-button" *ngFor="let scenario of scenarios | async" [value]="scenario.name">
+    {{scenario.details}}
+  </mat-radio-button>
+</mat-radio-group>
+

@@ -16,7 +16,7 @@ import { PopoverModule } from 'ngx-bootstrap/popover';
     BsDatepickerModule.forRoot(), 
     BsDropdownModule.forRoot(), 
     ModalModule.forRoot(), 
-    PopoverModule.forRoot() 
+    PopoverModule.forRoot() ,
   ],
   exports: [
     AlertModule, 
