@@ -1,0 +1,51 @@
+.main {
+    position: relative;
+    margin: 30px;
+    display: grid;
+  }
+
+.parameter{
+    float: left;
+    padding-left: 20px;
+}
+
+.computation{
+    padding-top: 20px;
+    padding-left: 20px;
+    position: relative;
+}
+
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+  
+ ::ng-deep .frame {
+    position: relative;
+  
+    width: 350px;
+    height: 300px;
+  
+    border-radius: 2px;
+    box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+    background: #3A92AF;
+    background: -webkit-linear-gradient(bottom left, #3A92AF 0%, #5CA05A 100%);
+    background: -moz-linear-gradient(bottom left, #3A92AF 0%, #5CA05A 100%);
+    background: -o-linear-gradient(bottom left, #3A92AF 0%, #5CA05A 100%);
+    background: linear-gradient(to top right, #3A92AF 0%, #5CA05A 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3A92AF', endColorstr='#5CA05A',GradientType=1 );
+    color: #fff;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  ::ng-deep .center {
+    position: absolute;
+    width: 310px;
+    height: 220px;
+    top:60px;
+    left: 20px;
+    background: #fff;
+    box-shadow: 8px 10px 15px 0 rgba(0,0,0,0.2);
+    border-radius: 3px;
+    color: black;
+  }
+  

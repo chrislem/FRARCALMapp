@@ -1,10 +1,12 @@
-.contract-radio-group {
-    display: flex;
-    flex-direction: column;
-    margin: 15px 0;
-  }
-  
-  .contract-radio-button {
-    margin: 5px;
-  }
-  
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  color: #498C25;
+}
+
+.radio-button {
+  margin: 5px;
+  color: #498C25;
+}
+

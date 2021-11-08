@@ -1,11 +1,41 @@
-<p>compute-parameter works!</p>
 
-<p>{{computationData.portfolio}}</p>
-<p>{{computationData.scenario}}</p>
 
-<button class="btn btn-success btn-sm" [disabled]="!computationProgress" (click)="startComputation()">
-    Start Computation </button>
+<div class="frame">
+    <h3 class="card-header">Parameters</h3>
+    <div class="card-body">
+     
+    </div>
+    <div class="center">
+        <div>
+            <mat-form-field >
+                <mat-label>Situation Date</mat-label>
+                <input matInput [matDatepicker]="sid" (dateInput)="sidChange($event)" (dateChange)="sidChange($event)"
+                [(ngModel)]="selectedDate"
+                >
+                <mat-datepicker-toggle matSuffix [for]="sid" ></mat-datepicker-toggle>
+                <mat-datepicker #sid></mat-datepicker>
+              </mat-form-field>
 
-    <div  #notification></div>
- 
+              <mat-form-field >
+                <mat-label>Step</mat-label>
+                <input matInput 
+                (keypress)="stepChange($event)"
+                (change)="stepChange($event)">
+              </mat-form-field>
 
+              <mat-form-field >
+                <mat-label>Maturity</mat-label>
+                <input matInput 
+                (keypress)="maturityChange($event)"
+                (change)="maturityChange($event)">
+              </mat-form-field>
+
+
+        </div>
+     
+     
+
+    </div>
+   </div> 
+  
+  

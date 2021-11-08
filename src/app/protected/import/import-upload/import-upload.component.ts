@@ -3,11 +3,16 @@ import { Observable } from 'rxjs';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { FileUploadService } from 'src/app/services/file-upload.service';
 
+/*
+https://codepen.io/roydigerhund/pen/ZQdbeN 
+*/
+
+
 @Component({
   selector: 'app-import-upload',
   templateUrl: './import-upload.component.html',
-  styles: ['.file-input {    display: none;}'
-  ]
+  styleUrls: ['./import-upload.component.scss']
+
 })
 export class ImportUploadComponent implements OnInit {
 

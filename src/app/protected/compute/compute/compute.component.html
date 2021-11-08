@@ -1,6 +1,19 @@
 <app-compute-banner>
 </app-compute-banner>
 
-<app-compute-contract></app-compute-contract>
-<app-compute-scenario></app-compute-scenario>
-<app-compute-parameter></app-compute-parameter>
+<div class='main'>
+
+    <!-- top line with parameters-->
+    <div >
+        <div class="parameter"><app-compute-contract></app-compute-contract></div>
+        <div class="parameter"><app-compute-scenario></app-compute-scenario></div>
+        <div class="parameter"><app-compute-parameter></app-compute-parameter></div>
+        <div class="parameter"><app-compute-indicators></app-compute-indicators></div>
+        
+    </div>
+    <div class="computation">
+        <app-computation></app-computation>
+        
+    </div>
+
+</div>

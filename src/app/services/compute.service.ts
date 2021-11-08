@@ -27,17 +27,43 @@ export class ComputeService {
     return this.http.get(`${this.baseUrl}/scenarios`);
   }
 
+  getFacts(): any {
+    return this.http.get(`${this.baseUrl}/facts`);
+  }
+
   public publishPortfolio(portfolio: string) {
      this.computeData.portfolio = portfolio;
      this._subject.next(this.computeData);
     console.log("publishPortfolio:"+portfolio);
   }
 
-  public publishScenario(scenario: string) {
-    this.computeData.scenario = scenario;
+  public publishSID(sid: Date) {
+    this.computeData.sid = sid;
     this._subject.next(this.computeData);
-   console.log("publishScenario:"+scenario);
+   console.log("publishSID:"+sid);
  }
+
+ public publishStep(step: string) {
+  this.computeData.bucketStep = step;
+  this._subject.next(this.computeData);
+}
+
+public publishMaturity(maturity: string) {
+  this.computeData.bucketMaturity = maturity;
+  this._subject.next(this.computeData);
+}
+
+public publishFacts(facts: Array<string>) {
+  this.computeData.facts = facts;
+  this._subject.next(this.computeData);
+  console.log("publishFacts:"+this.computeData.facts.length);
+}
+
+public publishScenario(scenario: string) {
+  this.computeData.scenario = scenario;
+  this._subject.next(this.computeData);
+ console.log("publishScenario:"+scenario);
+}
 
   initCommunication(){
     this.socket = io(this.uri);

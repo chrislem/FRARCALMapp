@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { ComputeService } from 'src/app/services/compute.service';
+import { DateAdapter } from '@angular/material/core';
+
 
 
 @Component({
@@ -9,37 +11,28 @@ import { ComputeService } from 'src/app/services/compute.service';
 })
 export class ComputeParameterComponent implements OnInit {
 
-  computationData: any = {};
-  @ViewChild('notification') notification: ElementRef;
-  computationProgress = false;
+  selectedDate: Date;
 
-  constructor(private computeService: ComputeService, private renderer: Renderer2) { 
-    computeService.event.subscribe((data) => {
-      this.computationData = data;
-      if(this.computationData.portfolio != "")
-        this.computationProgress = true;
-    });
-
-  }
+  constructor(private computeService: ComputeService, private dateAdapter: DateAdapter<Date>) {
+    this.dateAdapter.setLocale('en-GB'); //dd/MM/yyyy
+    this.selectedDate = new Date();
+   }
 
   ngOnInit(): void {
+    this.computeService.publishSID(this.selectedDate);
   }
 
-  startComputation(){
-    this.computationProgress = false;
-
-    this.computeService.initCommunication();
-
-    this.computeService.listenComputationNotification('notification').subscribe((data) => {
-      const p: HTMLParagraphElement = this.renderer.createElement('p');
-      p.innerHTML = data;
-      this.renderer.appendChild(this.notification.nativeElement, p)
-      console.log(data);
-      
-    })
-    //start the computation from rest call
-    this.computeService.startComputation();
-    //listen on socket
-    
+  maturityChange(event) {
+    this.computeService.publishMaturity(event.target.value)
   }
+
+  stepChange(event) {
+    this.computeService.publishStep(event.target.value)
+}
+
+sidChange(event) {
+  console.log("sid change")
+  this.computeService.publishSID(event.target.value)
+}
+
 }

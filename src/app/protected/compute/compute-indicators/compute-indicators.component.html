@@ -1,0 +1,16 @@
+<div class="frame">
+    <h3 class="card-header">Indicators</h3>
+    <div class="card-body">
+
+    </div>
+    <div class="center">
+        <div class="ulfact">
+            <mat-selection-list #facts (selectionChange)="selectionChange($event)" [(ngModel)]="selected">
+                <mat-list-option *ngFor="let fact of filteredOptions" checkboxPosition="before" [value]="fact"
+                    [selected]="factsSet.get(fact)">
+                    {{fact}}
+                </mat-list-option>
+            </mat-selection-list>
+        </div>
+    </div>
+</div>

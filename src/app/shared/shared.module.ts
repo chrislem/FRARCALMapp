@@ -17,6 +17,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 const materialModules = [
@@ -29,7 +33,10 @@ const materialModules = [
   MatListModule,
   MatCardModule,
   MatProgressBarModule,
-  MatRadioModule
+  MatRadioModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatCheckboxModule
 ]
 
 @NgModule({
@@ -40,6 +47,7 @@ const materialModules = [
     FormsModule,
     BrowserModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     ...materialModules,
   ],
   exports:[
@@ -48,6 +56,7 @@ const materialModules = [
     FormsModule,
     BrowserModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     ...materialModules,
   ]
 })

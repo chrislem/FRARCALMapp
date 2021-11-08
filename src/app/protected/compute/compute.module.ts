@@ -6,10 +6,12 @@ import { ComputeBannerComponent } from './compute-banner/compute-banner.componen
 import { ComputeContractComponent } from './compute-contract/compute-contract.component';
 import { ComputeScenarioComponent } from './compute-scenario/compute-scenario.component';
 import { ComputeParameterComponent } from './compute-parameter/compute-parameter.component';
+import { ComputationComponent } from './computation/computation.component';
+import { ComputeIndicatorsComponent } from './compute-indicators/compute-indicators.component';
 
 
 @NgModule({
-  declarations: [ComputeComponent, ComputeBannerComponent, ComputeContractComponent, ComputeScenarioComponent, ComputeParameterComponent],
+  declarations: [ComputeComponent, ComputeBannerComponent, ComputeContractComponent, ComputeScenarioComponent, ComputeParameterComponent, ComputationComponent, ComputeIndicatorsComponent],
   imports: [
     CommonModule,
     SharedModule

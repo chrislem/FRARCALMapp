@@ -1,0 +1,20 @@
+<div>
+    <p>{{computationData.portfolio}}</p>
+    <p>{{computationData.scenario}}</p>
+    <p>{{computationData.sid}}</p>
+    <p>{{computationData.bucketStep}}</p>
+    <p>{{computationData.bucketMaturity}}</p>
+    <p>Facts count: {{computationData.facts}}</p>
+    <div>
+
+
+
+
+        <button class="btn btn-success btn-sm" [disabled]="!computationProgress" (click)="startComputation()">
+            Start Computation </button>
+            <textarea [(ngModel)]='consolestr' cols="80" rows="5"></textarea>
+
+
+        <div #notification></div>
+    </div>
+</div>
