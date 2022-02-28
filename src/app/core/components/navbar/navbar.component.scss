@@ -1,0 +1,33 @@
+.almnavbar{
+    background-color: #4a497f;
+    background: -webkit-linear-gradient(bottom left, #9f9dc7 0%, #4a497f 100%);
+    background: -moz-linear-gradient(bottom left, #9f9dc7 0%, #4a497f 100%);
+    background: -o-linear-gradient(bottom left, #9f9dc7 0%, #4a497f 100%);
+    background: linear-gradient(to  right, #9f9dc7 0%, #4a497f 100%); 
+}
+
+.almcontainer{
+    width: 100%;
+    float: right;
+}
+
+.navbar-brand{
+    color: #48467b;
+    font-size: xx-large;
+    
+}
+.nav-link {
+    color: white;
+    font-size: large;
+}
+
+/*code to change background color*/
+.navbar-nav>.active>a {
+    background-color: red;
+    color: green;
+}
+
+
+.nav-item > a:hover {
+    color: #4176aa!important;
+  }
