@@ -9,6 +9,7 @@ import { ComputeService } from 'src/app/services/compute.service';
 export class ComputationComponent implements OnInit {
 
   computationData: any = {};
+  computationStatus: string = "";
   @ViewChild('notification') notification: ElementRef;
   consolestr: string = "";
   computationProgress = false;
@@ -31,19 +32,21 @@ export class ComputationComponent implements OnInit {
     this.computeService.initCommunication();
 
     this.computeService.listenComputationNotification('notification').subscribe((data) => {
-      const p: HTMLParagraphElement = this.renderer.createElement('p');
+      /*const p: HTMLParagraphElement = this.renderer.createElement('p');
       p.innerHTML = data;
-      this.renderer.appendChild(this.notification.nativeElement, p)
-      console.log(data);
+      this.renderer.appendChild(this.notification.nativeElement, p)*/
+      this.computationStatus = data;
+
       
     })
 
 
     this.computeService.listenComputationNotification('error').subscribe((data) => {
-      const p: HTMLParagraphElement = this.renderer.createElement('p');
+      /*const p: HTMLParagraphElement = this.renderer.createElement('p');
       p.innerHTML = "ERROR:"+data;
-      this.renderer.appendChild(this.notification.nativeElement, p)
-      console.log(data);
+      this.renderer.appendChild(this.notification.nativeElement, p)*/
+      this.computationStatus = data;
+
       
     })
 
